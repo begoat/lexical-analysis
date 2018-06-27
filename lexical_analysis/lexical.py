@@ -22,24 +22,36 @@ def main():
     single_quote = False
     double_quote = False
     data_length = len(raw_data)
+    token_list = []
+    quote_start = 0
+    token = Token()
     while index < data_length:
-        # FIXME: line number miss understanding when use /* \n*/
+        # FIXME: line number error because of /* \n*/
         ch = raw_data[index]
         ch_prev = raw_data[index - 1] if index > 1 else None
-        # ch_next = raw_data[index + 1] if index < data_length -1 else None
-        # TODO: ignore comment and quote
-        print('current ch is', [ch])
-        if ch == '\'' and ch_prev != '\\':
+        """ ignore comments and quote
+        """
+        if ch == '\'' and ch_prev != '\\' and not double_quote:
             if not single_quote:
+                quote_start = index
                 single_quote = True
             else:
+                token_list.append({
+                    'token': raw_data[quote_start:index+1],
+                    'category': None
+                })
                 single_quote = False
             index = index + 1
             continue
-        elif ch == '\"' and ch_prev != '\\':
+        elif ch == '\"' and ch_prev != '\\' and not single_quote:
             if not double_quote:
+                quote_start = index
                 double_quote = True
             else:
+                token_list.append({
+                    'token': raw_data[quote_start:index+1],
+                    'category': 'constant'
+                })
                 double_quote = False
             index = index + 1
             continue
@@ -60,12 +72,13 @@ def main():
             index = index + 2
             continue
 
+        """ only handle useful string
+        """
         if not double_quote and not single_quote and not is_double_comment and not is_single_comment:
-            token = Token()
             offset = 1
             while True:
-                # TODO test $ or some weird sign
-                # TODO: avoid the overflow of the raw_data
+                # FIXME: for loop regex may broke. 2e is invalid but 2e1 is valid and is what we want, maybe need a patch for this case
+                # FIXME: test $ or some weird signs， how to handle error correctly
                 tokenize = token.categorize_token(raw_data[index:index+offset])
                 # print('tokenize', [raw_data[index:index+offset]], 'result', tokenize)
                 if index + offset >= data_length:
@@ -73,19 +86,23 @@ def main():
                 if tokenize:
                     offset = offset + 1
                     continue
-                print('token', [raw_data[index:index+offset-1]], end='')
+                token_list.append({
+                    'token': [raw_data[index:index+offset-1]],
+                    'category': token.categorize_token(raw_data[index:index+offset-1])
+                })
                 break
 
-            # if index + offset - 1 <= data_length - 1:
-            #     break
             if index + offset - 1 < data_length - 1:
                 index = index + offset - 1
                 continue
 
         index = index + 1
     # print('line_number', line_number)
-    # TODO: lexical_extract_token()
-    # print(raw_data)
+    for i in token_list:
+        if not i['category']:
+            i['category'] = token.categorize_token(i['token'])
+        if i['category'] != 'whitespace':
+            print(i)
 
 
 if __name__ == '__main__':

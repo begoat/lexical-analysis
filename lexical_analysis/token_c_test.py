@@ -41,7 +41,7 @@ class TokenTest(unittest.TestCase):
             '_123', '_asd123', 'AaC123', 'AC_123'
         ]
         false_list = [
-            '123sd', 'if', 'sizeof'
+            '123sd', 'if', 'sizeof', 'printf\n', 'aa$%@%', 'aa bb'
         ]
         for i in true_list:
             self.assertEqual(True, self.token.is_identifier(i))

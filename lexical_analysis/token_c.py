@@ -20,7 +20,8 @@ class Token:
             'default', 'goto', 'sizeof', 'volatile', 'do', 'if',
             'static', 'while'
         ]
-        self.identifier_regex = re.compile('^[a-zA-Z_][a-zA-Z_0-9]*$')
+        self.identifier_regex = re.compile(r"^[^\d\W]\w*\Z", re.UNICODE)
+        # https://stackoverflow.com/questions/5474008/regular-expression-to-confirm-whether-a-string-is-a-valid-identifier-in-python/5474290#5474290
         self.operator = {
             '+', '-', '*', '/', '%', '++', '==',
             '==', '!=', '<', '>', '>=', '<=',
