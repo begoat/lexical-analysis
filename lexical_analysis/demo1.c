@@ -21,7 +21,7 @@ char test = 'a';
         );
     }
 if ( num ==   2) {
-$printf
+printf
 (
 "Hello,/* test*       \n/World%lf"
     ,s
@@ -30,7 +30,7 @@ $printf
 
     // THis is another test
 
-    printf("hello   \\ \
+    printf("hello   \\ \kl\*
  world ");
 }
 
@@ -40,4 +40,4 @@ printf("TEST");
 */  if ( true&&1num==3){
 return 0;
 }
-    }
+    )
