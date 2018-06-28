@@ -8,10 +8,10 @@ class TokenTest(unittest.TestCase):
 
     def test_whitespace(self):
         true_list = [
-            ' ', '   ', '  ', '\t', '\n', '\t ', '\t   ', '\t      ',
+            ' ', '   ', '  ', '\t', '\n', '\t ', '\t   ', '\t      ', '\n '
         ]
         false_list = [
-            ' s \n s ', 'sd sdasd\n\s', '\t     s', 's'
+            ' s \n s ', 'sd sdasd\n\s', '\t     s', 's', ' (', '人'
         ]
         for i in true_list:
             self.assertEqual(True, self.token.is_whitespace(i))
@@ -41,11 +41,12 @@ class TokenTest(unittest.TestCase):
             '_123', '_asd123', 'AaC123', 'AC_123'
         ]
         false_list = [
-            '123sd', 'if', 'sizeof', 'printf\n', 'aa$%@%', 'aa bb'
+            '123sd', 'if', 'sizeof', 'printf\n', 'aa$%@%', 'aa bb', '人', '。', '。'
         ]
         for i in true_list:
             self.assertEqual(True, self.token.is_identifier(i))
         for i in false_list:
+            print(i)
             self.assertEqual(False, self.token.is_identifier(i))
 
     def test_keyword(self):

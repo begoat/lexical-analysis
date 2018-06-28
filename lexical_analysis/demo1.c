@@ -38,6 +38,7 @@ printf
 This is a test
 printf("TEST");
 */  if ( true&&1num==3){
-return 0;
+人return 0;
 }
     )
+    人呢

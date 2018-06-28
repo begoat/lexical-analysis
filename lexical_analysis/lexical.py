@@ -25,37 +25,41 @@ def main():
     token_list = []
     quote_start = 0
     token = Token()
+    # print('raw data', [raw_data])
     while index < data_length:
-        # FIXME: line number error because of /* \n*/
         ch = raw_data[index]
+        if ch == '\n':
+            line_number = line_number + 1
         ch_prev = raw_data[index - 1] if index > 1 else None
         """ ignore comments and quote
         """
-        if ch == '\'' and ch_prev != '\\' and not double_quote:
+        if ch == '\'' and ch_prev != '\\' and not double_quote and not is_single_comment and not is_double_comment:
             if not single_quote:
                 quote_start = index
                 single_quote = True
             else:
                 token_list.append({
                     'token': raw_data[quote_start:index+1],
-                    'category': None
+                    'category': None,
+                    'line_number': line_number
                 })
                 single_quote = False
             index = index + 1
             continue
-        elif ch == '\"' and ch_prev != '\\' and not single_quote:
+        elif ch == '\"' and ch_prev != '\\' and not single_quote and not is_single_comment and not is_double_comment:
             if not double_quote:
                 quote_start = index
                 double_quote = True
             else:
                 token_list.append({
                     'token': raw_data[quote_start:index+1],
-                    'category': 'constant'
+                    'category': 'constant',
+                    'line_number': line_number
                 })
                 double_quote = False
             index = index + 1
             continue
-        elif raw_data[index:index+2] in ['//', '/*'] and not is_single_comment and not is_double_comment:
+        elif raw_data[index:index+2] in ['//', '/*'] and not is_single_comment and not is_double_comment and not single_quote and not double_quote:
             if raw_data[index:index+2] == '//':
                 is_single_comment = True
             else:
@@ -65,7 +69,6 @@ def main():
         elif is_single_comment and ch == '\n':
             is_single_comment = False
             index = index + 1
-            line_number = line_number + 1
             continue
         elif is_double_comment and raw_data[index:index+2] == '*/':
             is_double_comment = False
@@ -81,27 +84,41 @@ def main():
                 # FIXME: test $ or some weird signs， how to handle error correctly
                 tokenize = token.categorize_token(raw_data[index:index+offset])
                 # print('tokenize', [raw_data[index:index+offset]], 'result', tokenize)
-                if index + offset >= data_length:
-                    break
+                # print('current index:', index, 'current offset', offset)
                 if tokenize:
+                    """ [:right boundary exceed the length is not ok]
+                    """
+                    if index + offset >= data_length:
+                        token_list.append({
+                            'token': raw_data[index:index + offset],
+                            'category': token.categorize_token(raw_data[index:index + offset]),
+                            'line_number': line_number
+                        })
+                        break
                     offset = offset + 1
                     continue
+                """ patch for single char not match
+                """
+                right_boundary = index + offset - 1 if offset > 1 else index + offset
                 token_list.append({
-                    'token': [raw_data[index:index+offset-1]],
-                    'category': token.categorize_token(raw_data[index:index+offset-1])
+                    'token': raw_data[index:right_boundary],
+                    'category': token.categorize_token(raw_data[index:right_boundary]),
+                    'line_number': line_number
                 })
+                for character in range(1, len(raw_data[index:right_boundary])):
+                    if raw_data[index:right_boundary][character] == '\n':
+                        line_number = line_number + 1
                 break
 
-            if index + offset - 1 < data_length - 1:
+            if offset > 1:
                 index = index + offset - 1
                 continue
 
         index = index + 1
-    # print('line_number', line_number)
     for i in token_list:
         if not i['category']:
             i['category'] = token.categorize_token(i['token'])
-        if i['category'] != 'whitespace':
+        if i['category'] != 'whitespace' or True:
             print(i)
 
 
