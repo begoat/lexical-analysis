@@ -25,10 +25,10 @@ class TokenTest(unittest.TestCase):
         """
         true_list = [
             '1e+1.0', '+1.0e+1.0', '-1.0e-1.0', '1e+10', '1e+1.0', '1e+10.0',
-            '1.0e+10', '\"I AM A TESTSTRING\"', '\'s\''
+            '1.0e+10', '\"I AM A TESTSTRING\"', '\'s\'', '+2e1'
         ] + [str(i) for i in range(-100000, 100000)]
         false_list = [
-            '???', 'test', '\'test\'', 's1e+1.0', '1e+1.0s'
+            '???', 'test', '\'test\'', 's1e+1.0', '1e+1.0s', '+2e-1\n', '+2e1\n'
         ]
         # TODO: float test case
         for i in true_list:
@@ -46,7 +46,6 @@ class TokenTest(unittest.TestCase):
         for i in true_list:
             self.assertEqual(True, self.token.is_identifier(i))
         for i in false_list:
-            print(i)
             self.assertEqual(False, self.token.is_identifier(i))
 
     def test_keyword(self):

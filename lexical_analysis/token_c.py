@@ -10,8 +10,8 @@ class Token:
     operator:
     """
     def __init__(self):
-        self.whitespace_regex = re.compile('^[\s]+$')
-        self.constant_regex = re.compile('^[+-]?[0-9]+$|^".*"$|^\'[a-zA-Z0-9]\'$|^[-+]?[\d]+\.?[\d]*[Ee](?:[-+]?[\d]+\.?[\d]*)$')
+        self.whitespace_regex = re.compile('^[\s]+\Z')
+        self.constant_regex = re.compile('^[+-]?[0-9]+\Z|^".*"\Z|^\'[a-zA-Z0-9]\'\Z|^[-+]?[\d]+\.?[\d]*[Ee](?:[-+]?[\d]+\.?[\d]*)\Z')
         self.keyword = [
             'auto', 'double', 'int', 'struct', 'break', 'else',
             'long', 'switch', 'case', 'enum', 'register', 'typedef',

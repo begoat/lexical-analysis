@@ -11,7 +11,7 @@ int main()
 // test \n test
 {
     int true = 'a';
-    int num = +2e-1;
+    double num = +2e-1;
     int s =      num*3*3 ;
 char test = 'a';
     if (num== 2) {

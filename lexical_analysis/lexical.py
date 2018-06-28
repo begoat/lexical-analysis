@@ -80,7 +80,6 @@ def main():
         if not double_quote and not single_quote and not is_double_comment and not is_single_comment:
             offset = 1
             while True:
-                # FIXME: for loop regex may broke. 2e is invalid but 2e1 is valid and is what we want, maybe need a patch for this case
                 # FIXME: test $ or some weird signs， how to handle error correctly
                 tokenize = token.categorize_token(raw_data[index:index+offset])
                 # print('tokenize', [raw_data[index:index+offset]], 'result', tokenize)
@@ -97,6 +96,16 @@ def main():
                         break
                     offset = offset + 1
                     continue
+                # FIXME: still need patch for 2.0e ...
+                elif raw_data[index+offset-1] == 'e':
+                    """ patch for scientific notation
+                    """
+                    if index+offset <= data_length - 1:
+                        if raw_data[index+offset] in ['+', '-']:
+                            offset = offset + 3
+                        elif raw_data[index+offset] in [str(i) for i in range(0, 10)]:
+                            offset = offset + 2
+                        continue
                 """ patch for single char not match
                 """
                 right_boundary = index + offset - 1 if offset > 1 else index + offset
@@ -118,7 +127,7 @@ def main():
     for i in token_list:
         if not i['category']:
             i['category'] = token.categorize_token(i['token'])
-        if i['category'] != 'whitespace' or True:
+        if i['category'] != 'whitespace':
             print(i)
 
 
