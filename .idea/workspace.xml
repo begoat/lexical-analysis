@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="93a7c44d-92a1-41ea-8409-397e5afbe425" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lexical_analysis/demo1.c" afterPath="$PROJECT_DIR$/lexical_analysis/demo1.c" />
       <change beforePath="$PROJECT_DIR$/lexical_analysis/lexical.py" afterPath="$PROJECT_DIR$/lexical_analysis/lexical.py" />
-      <change beforePath="$PROJECT_DIR$/lexical_analysis/token_c.py" afterPath="$PROJECT_DIR$/lexical_analysis/token_c.py" />
-      <change beforePath="$PROJECT_DIR$/lexical_analysis/token_c_test.py" afterPath="$PROJECT_DIR$/lexical_analysis/token_c_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +16,7 @@
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_in_token_test_py.coverage" NAME="Unittests in token_test.py Coverage Results" MODIFIED="1530011590295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_for_token_c_test_TokenTest_test_categorize_token.coverage" NAME="Unittests for token_c_test.TokenTest.test_categorize_token Coverage Results" MODIFIED="1530084961866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_for_token_c_test_TokenTest_test_constant.coverage" NAME="Unittests for token_c_test.TokenTest.test_constant Coverage Results" MODIFIED="1530151313556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
-    <SUITE FILE_PATH="coverage/lexical_analysis$lexical.coverage" NAME="lexical Coverage Results" MODIFIED="1530152411340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
+    <SUITE FILE_PATH="coverage/lexical_analysis$lexical.coverage" NAME="lexical Coverage Results" MODIFIED="1530166092313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_in_token_c_test_py.coverage" NAME="Unittests in token_c_test.py Coverage Results" MODIFIED="1530152514740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_for_token_c_test_TokenTest_test_identifier.coverage" NAME="Unittests for token_c_test.TokenTest.test_identifier Coverage Results" MODIFIED="1530146505564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lexical_analysis" />
     <SUITE FILE_PATH="coverage/lexical_analysis$Unittests_for_token_c_test_TokenTest.coverage" NAME="Unittests for lexical_analysis.token_c_test.TokenTest Coverage Results" MODIFIED="1530014766476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -33,11 +30,31 @@
       <file leaf-file-name="lexical.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lexical_analysis/lexical.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-325">
-              <caret line="81" column="23" lean-forward="false" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+            <state relative-caret-position="1494">
+              <caret line="93" column="28" lean-forward="true" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
               <folding>
                 <element signature="e#93#135#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="token_c.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1392">
+              <caret line="48" column="33" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="token_c_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="44" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,6 +78,8 @@
       <find>print</find>
       <find>2.0e</find>
       <find>+2e-1</find>
+      <find>None</find>
+      <find>e</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -77,9 +96,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lexical_analysis/token_c_test.py" />
-        <option value="$PROJECT_DIR$/lexical_analysis/demo1.c" />
         <option value="$PROJECT_DIR$/lexical_analysis/token_c.py" />
         <option value="$PROJECT_DIR$/lexical_analysis/lexical.py" />
+        <option value="$PROJECT_DIR$/lexical_analysis/demo1.c" />
       </list>
     </option>
   </component>
@@ -154,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in token_c_test.py">
+  <component name="RunManager" selected="Python.lexical">
     <configuration name="lexical" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,8 +262,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in token_c_test.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lexical" />
+        <item index="0" class="java.lang.String" itemvalue="Python.lexical" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in token_c_test.py" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for token_c_test.TokenTest.test_constant" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for token_c_test.TokenTest.test_whitespace" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for token_c_test.TokenTest.test_identifier" />
@@ -334,13 +353,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/lexical_analysis/lexical.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager>
@@ -350,11 +362,36 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lexical_analysis/lexical.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2784">
+          <caret line="96" column="30" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+          <folding>
+            <element signature="e#93#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexical_analysis/demo1.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1595">
+          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -380,7 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -388,7 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48778">
           <caret line="1682" column="0" lean-forward="false" selection-start-line="1682" selection-start-column="0" selection-end-line="1682" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -550,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="1682" column="0" lean-forward="false" selection-start-line="1682" selection-start-column="0" selection-end-line="1682" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,38 +630,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="48" column="33" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lexical_analysis/token_c.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        <state relative-caret-position="147">
+          <caret line="44" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lexical_analysis/demo1.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        <state relative-caret-position="246">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lexical_analysis/lexical.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="81" column="23" lean-forward="false" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+        <state relative-caret-position="1494">
+          <caret line="93" column="28" lean-forward="true" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
           <folding>
             <element signature="e#93#135#0" expanded="true" />
           </folding>

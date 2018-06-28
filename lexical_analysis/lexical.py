@@ -7,10 +7,6 @@ from lexical_analysis.token_c import Token
 import os
 
 
-def lexical_extract_token():
-    pass
-
-
 def main():
     with open(os.path.dirname(__file__) + '/demo1.c') as f:
         raw_data = f.read()
@@ -97,7 +93,7 @@ def main():
                     offset = offset + 1
                     continue
                 # FIXME: still need patch for 2.0e ...
-                elif raw_data[index+offset-1] == 'e':
+                elif raw_data[index+offset-1] in ['e', 'E']:
                     """ patch for scientific notation
                     """
                     if index+offset <= data_length - 1:
